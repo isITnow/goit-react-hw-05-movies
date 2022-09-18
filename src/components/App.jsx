@@ -1,3 +1,5 @@
+import { Routes, Route } from 'react-router-dom';
+
 export const App = () => {
   return (
     <div
@@ -11,6 +13,9 @@ export const App = () => {
       }}
     >
       React homework template
+      <Routes>
+        <Route></Route>
+      </Routes>
     </div>
   );
 };

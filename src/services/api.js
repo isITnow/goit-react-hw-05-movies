@@ -12,7 +12,7 @@ const filmApi = axios.create({
 
 ////// TRENDING //////
 
-export const fetchFilmTrending = async () => {
+const fetchFilmTrending = async () => {
   //   const params = {
   //     media_type: 'movie',
   //     time_window: 'day',
@@ -29,7 +29,7 @@ export const fetchFilmTrending = async () => {
 
 ////// QUERY //////
 
-export const fetchFilmByQuery = async (query, page) => {
+const fetchFilmByQuery = async (query, page) => {
   const response = axios.get(
     `${BASE_URL}/search/movie?&language=en-U&include_adult=true&api_key=${API_KEY}&page=${page}&query=${query}`
   );
@@ -39,7 +39,7 @@ export const fetchFilmByQuery = async (query, page) => {
 
 ////// ID //////
 
-export const fetchFilmID = async movieId => {
+const fetchFilmByID = async movieId => {
   const response = axios.get(
     `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
   );
@@ -49,7 +49,7 @@ export const fetchFilmID = async movieId => {
 
 ////// CAST //////
 
-export const fetchFilmCast = async movieId => {
+const fetchFilmCast = async movieId => {
   const response = axios.get(
     `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
   );
@@ -59,10 +59,18 @@ export const fetchFilmCast = async movieId => {
 
 ////// REVIEWS //////
 
-export const fetchFilmReviews = async movieId => {
+const fetchFilmReviews = async movieId => {
   const response = axios.get(
     `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
 
   return response;
+};
+
+export const API = {
+  fetchFilmReviews,
+  fetchFilmCast,
+  fetchFilmByID,
+  fetchFilmByQuery,
+  fetchFilmTrending,
 };
