@@ -1,0 +1,10 @@
+.card {
+    margin-top: 15px;
+    display: flex;
+}
+
+.info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
