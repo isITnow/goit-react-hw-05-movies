@@ -23,8 +23,8 @@ export const App = () => {
             </Route>
           </Route>
         </Routes>
+        <ToastContainer autoClose={2000} />
       </BrowserRouter>
-      <ToastContainer autoClose={2000} />
     </div>
   );
 };
