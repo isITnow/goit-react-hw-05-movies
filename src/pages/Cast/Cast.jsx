@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 import { API } from 'services/api';
 
@@ -11,10 +11,10 @@ const Cast = () => {
   useEffect(() => {
     API.fetchFilmCast(movieId)
       .then(({ data }) => {
-        if (!data.cast.length) {
-          toast.warn('No cast info');
-          return;
-        }
+        // if (!data.cast.length) {
+        //   toast.warn('No cast info');
+        //   return;
+        // }
         setCastInfo(data.cast);
       })
       .catch(error => console.log(error.message));

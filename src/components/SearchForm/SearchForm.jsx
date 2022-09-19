@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import s from '../SearchForm/saerchForm.module.css';
 import { useState } from 'react';
 
@@ -12,10 +12,10 @@ const SearchForm = ({ onSubmit }) => {
 
   const handleFormSubmit = evt => {
     evt.preventDefault();
-    if (!query.trim()) {
-      toast.error('Please, enter your request');
-      return;
-    }
+    // if (!query.trim()) {
+    //   toast.error('Please, enter your request');
+    //   return;
+    // }
     onSubmit(query);
     setQuery('');
   };
