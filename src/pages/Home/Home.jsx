@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+
 import { API } from 'services/api';
-import { MovieList } from 'components/MovieList';
+import MovieList from 'components/MovieList';
 import Container from 'components/Container';
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
     <main>
       <Container>
         <h1>Trending today</h1>
-        {trendingFilms.length && <MovieList films={trendingFilms} />}
+        {trendingFilms.length > 0 && <MovieList films={trendingFilms} />}
       </Container>
     </main>
   );

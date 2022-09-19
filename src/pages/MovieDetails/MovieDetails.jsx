@@ -13,7 +13,7 @@ const MovieDetails = () => {
     API.fetchFilmByID(movieId)
       .then(({ data }) => {
         setFilm(data);
-        setStatus('resolved');
+        setStatus('success');
       })
       .catch(error => console.log(error.message));
   }, [movieId]);
@@ -21,7 +21,7 @@ const MovieDetails = () => {
   return (
     <main>
       <Container>
-        {status === 'resolved' && <MovieInfo film={film} />}
+        {status === 'success' && <MovieInfo film={film} />}
         <nav>
           <p>Additional information</p>
 

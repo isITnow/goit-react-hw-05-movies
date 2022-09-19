@@ -6,6 +6,9 @@ import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Cast from 'pages/Cast';
 import Reviews from 'pages/Reviews';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const App = () => {
   return (
     <div>
@@ -21,6 +24,7 @@ export const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };
