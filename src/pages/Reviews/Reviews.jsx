@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import { API } from 'services/api';
 
@@ -11,10 +11,10 @@ const Reviews = () => {
   useEffect(() => {
     API.fetchFilmReviews(movieId)
       .then(({ data }) => {
-        // if (!data.results.length) {
-        //   toast.warn('No reviews');
-        //   return;
-        // }
+        if (!data.results.length) {
+          toast.warn('No reviews');
+          return;
+        }
         setReviews(data.results);
       })
 
