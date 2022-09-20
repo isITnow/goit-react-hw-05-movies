@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/goit-react-hw-05-movies/">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />

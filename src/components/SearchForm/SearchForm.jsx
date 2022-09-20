@@ -1,6 +1,6 @@
 // import { toast } from 'react-toastify';
-import s from '../SearchForm/saerchForm.module.css';
 import { useState } from 'react';
+import s from '../SearchForm/saerchForm.module.css';
 
 const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
