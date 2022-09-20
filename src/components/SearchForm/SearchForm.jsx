@@ -1,9 +1,20 @@
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 import s from '../SearchForm/saerchForm.module.css';
+import { useSearchParams } from 'react-router-dom';
+import { useMemo } from 'react';
 
-const SearchForm = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
+const SearchForm = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const queryParams = useMemo(() => {
+    return [...searchParams].reduce((acc, [key, value]) => {
+      acc[key] = value;
+      return acc;
+    }, {});
+  }, [searchParams]);
+
+  const [query, setQuery] = useState(queryParams.search ?? '');
 
   const handleInputChange = evt => {
     const { value } = evt.target;
@@ -16,8 +27,9 @@ const SearchForm = ({ onSubmit }) => {
       toast.error('Please, enter your request');
       return;
     }
-    onSubmit(query);
-    setQuery('');
+    setSearchParams(prev => {
+      return { ...queryParams, search: query };
+    });
   };
 
   return (

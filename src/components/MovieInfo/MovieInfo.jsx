@@ -9,14 +9,11 @@ const MovieInfo = ({ film }) => {
 
   const filmTitle = `${title} (${release_date.slice(0, 4)})`;
   const userScore = Math.floor(vote_average * 10);
+  const imgPath = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   return (
     <div className={s.card}>
-      <img
-        width="300"
-        src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-        alt={title}
-      />
+      <img width="300" src={imgPath} alt={title} />
       <div className={s.info}>
         <h2>{filmTitle}</h2>
         <p>{`User Score: ${userScore}%`}</p>
