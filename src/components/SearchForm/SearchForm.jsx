@@ -1,8 +1,8 @@
-import { toast } from 'react-toastify';
 import { useState } from 'react';
-import s from '../SearchForm/saerchForm.module.css';
 import { useSearchParams } from 'react-router-dom';
 import { useMemo } from 'react';
+import { toast } from 'react-toastify';
+import s from '../SearchForm/saerchForm.module.css';
 
 const SearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();

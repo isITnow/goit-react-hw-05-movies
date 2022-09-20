@@ -1,6 +1,7 @@
-import { Outlet, useParams, Link } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { API } from 'services/api';
+
 import MovieInfo from 'components/MovieInfo';
 import Container from 'components/Container';
 
@@ -22,18 +23,6 @@ const MovieDetails = () => {
     <main>
       <Container>
         {status === 'success' && <MovieInfo film={film} />}
-        <nav>
-          <p>Additional information</p>
-
-          <ul>
-            <li>
-              <Link to="cast">Cast</Link>
-            </li>
-            <li>
-              <Link to="reviews">Reviews</Link>
-            </li>
-          </ul>
-        </nav>
         <Outlet />
       </Container>
     </main>

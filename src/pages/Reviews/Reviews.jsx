@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-
 import { API } from 'services/api';
+import { toast } from 'react-toastify';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -21,15 +20,22 @@ const Reviews = () => {
       .catch(error => console.log(error.message));
   }, [movieId]);
 
+  if (!reviews.length) {
+    return;
+  }
+
   return (
-    <ul>
-      {reviews.map(({ author, id, content }) => (
-        <li key={id}>
-          <p>{author ? author : 'no name'}</p>
-          <p>{content}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h3>Reviews</h3>
+      <ul>
+        {reviews.map(({ author, id, content }) => (
+          <li key={id}>
+            <p>{author ? author : 'no name'}</p>
+            <p>{content}</p>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 

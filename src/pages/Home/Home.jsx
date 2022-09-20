@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-
 import { API } from 'services/api';
+
 import MovieList from 'components/MovieList';
 import Container from 'components/Container';
 
