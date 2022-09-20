@@ -1,6 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import { Suspense } from 'react';
 import s from '../SharedLayout/sharedLayout.module.css';
+import { ThreeDots } from 'react-loader-spinner';
 
 const SharedLayout = () => {
   const getActiveClassName = ({ isActive }) => {
@@ -16,7 +17,11 @@ const SharedLayout = () => {
           Movies
         </NavLink>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <ThreeDots color="#ff6347" wrapperStyle={{ margin: 'auto' }} />
+        }
+      >
         <Outlet />
       </Suspense>
     </>

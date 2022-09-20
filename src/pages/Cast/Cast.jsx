@@ -7,6 +7,7 @@ const Cast = () => {
   const { movieId } = useParams();
 
   const [castInfo, setCastInfo] = useState([]);
+
   useEffect(() => {
     API.fetchFilmCast(movieId)
       .then(({ data }) => {
