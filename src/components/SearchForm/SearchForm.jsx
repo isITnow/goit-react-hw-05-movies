@@ -37,7 +37,7 @@ const SearchForm = () => {
       <input
         name="film"
         type="text"
-        placeholder="Пиши давай"
+        placeholder="Let's try..."
         className={s.input}
         onChange={handleInputChange}
         value={query}

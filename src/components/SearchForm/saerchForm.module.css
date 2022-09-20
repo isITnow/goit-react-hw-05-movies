@@ -14,6 +14,11 @@
     cursor: pointer;
 }
 
+.btn:hover {
+    color: #fff;
+    background-color: tomato;
+}
+
 .input {
     padding: 5px;
     font-size: 18px;
